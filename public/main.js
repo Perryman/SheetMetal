@@ -4,7 +4,8 @@ vfs.set('/main.baml', '// main.baml structure');
 const ui = {
     fileList: document.getElementById('file-list'),
     editor: document.getElementById('editor'),
-    output: document.getElementById('output')
+    output: document.getElementById('output'),
+    runBtn: document.getElementById('run-btn')
 };
 
 let activeFile = '/main.baml';
@@ -27,6 +28,13 @@ function openFile(filename) {
     renderFileList();
 }
 
+function run() {
+    if (activeFile) {
+        const content = vfs.get(activeFile);
+        ui.output.textContent = content;
+    }
+}
+
 function init() {
     console.log('SheetMetal core online');
     
@@ -36,6 +44,9 @@ function init() {
             vfs.set(activeFile, e.target.value);
         }
     });
+
+    // Setup run listener
+    ui.runBtn.addEventListener('click', run);
 
     // Initial render
     openFile(activeFile);
