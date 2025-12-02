@@ -1,3 +1,5 @@
+import initBAML, { parse_baml } from "./vendor/baml/baml_schema_wasm.js";
+
 const vfs = new Map();
 vfs.set('/main.baml', '// main.baml structure');
 
@@ -35,8 +37,10 @@ function run() {
     }
 }
 
-function init() {
+async function init() {
     console.log('SheetMetal core online');
+    await initBAML();
+    ui.output.textContent = "WASM loaded";
     
     // Setup editor listener
     ui.editor.addEventListener('input', (e) => {
