@@ -13,10 +13,6 @@ client<llm> OpenRouter {
     base_url "https://openrouter.ai/api/v1"
     api_key env.OPENROUTER_API_KEY
     model "kwaipilot/kat-coder-pro:free"
-    headers {
-      "HTTP-Referer" "https://perryman.github.io/SheetMetal"
-      "X-Title" "SheetMetal"
-    }
   }
 }
 
@@ -186,7 +182,8 @@ async function testBamlRuntime() {
       const project = WasmProject.new("./", files);
 
       const envVars = {
-        OPENROUTER_API_KEY: settings.apiKeyInput.value
+        OPENROUTER_API_KEY: settings.apiKeyInput.value,
+        BOUNDARY_PROXY_URL: "https://fiddle-proxy.fly.dev"
       };
 
       console.log("Creating runtime…");
