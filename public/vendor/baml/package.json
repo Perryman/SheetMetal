@@ -1,0 +1,20 @@
+{
+  "name": "baml-schema-build",
+  "type": "module",
+  "collaborators": [
+    "Boundary <contact@boundaryml.com>"
+  ],
+  "description": "BAML Toolchain",
+  "version": "0.214.0",
+  "license": "SEE LICENSE IN ../LICENSE",
+  "files": [
+    "baml_schema_build_bg.wasm",
+    "baml_schema_build.js",
+    "baml_schema_build.d.ts"
+  ],
+  "main": "baml_schema_build.js",
+  "types": "baml_schema_build.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
