@@ -8,6 +8,20 @@
 </head>
 <body>
     <div id="container">
+        <div id="settings">
+            <label>OpenRouter API Key: 
+                <input id="api-key-input" type="password" placeholder="sk-or-..." />
+            </label>
+        
+            <label>Model:
+                <input id="model-input" list="model-list" placeholder="Search models..." style="width: 250px;">
+                <datalist id="model-list"></datalist>
+                <label style="margin-left: 5px; font-size: 12px;">
+                    <input id="free-only-checkbox" type="checkbox" checked />
+                    Free only
+                </label>
+            </label>
+        </div>
         <div id="top-pane">
             <div id="file-list"></div>
             <textarea id="editor" spellcheck="false"></textarea>
