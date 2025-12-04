@@ -1,12 +1,30 @@
 # SheetMetal
 
-A static site project.
+**Status**: Active MVP (Browser-native BAML execution)
+**Current Version**: 0.3 (Theme Support, New Layout, File UX)
 
-## Structure
+## Philosophy
+"BAML in the Sheets, LLM in the Streets."
+- Zero build steps.
+- Zero dependencies (except vendored WASM).
+- Progressive Minimalism.
 
-- `/public`: Contains the static site files (HTML, CSS, JS).
-- `index.html`: Redirects to `public/index.html`.
+## Architecture
+- `public/index.html`: 3-pane layout (Files | Editor | Output).
+- `public/main.js`: Core logic (UI, VFS, Settings, BAML Bridge).
+- `public/vendor/baml/`: Versioned BAML WASM runtime.
 
-## Setup
+## Roadmap
+- [x] MVP UI (Settings toggle, File list, Editor, Output)
+- [x] OpenRouter Integration
+- [x] Dark Mode / System Theme
+- [x] File Management (Inline create, Rename)
+- [ ] Google Sheets Integration (UI skeleton exists, logic pending)
+- [ ] Dynamic test input parsing (currently regex-based discovery, fallback inputs)
 
-No build process required. Serve the files directly or host on GitHub Pages.
+## Development
+Clone repo. Serve root with any static server (e.g. `python3 -m http.server`).
+Navigate to `/public`.
+
+## License
+MIT
